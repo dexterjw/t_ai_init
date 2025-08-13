@@ -1,10 +1,9 @@
 # config.yaml
 model_list:
-  - model_name: gpt-5
+  - model_name: gpt-5-from-config
     litellm_params:
       model: gpt-5
       api_key: ${API_KEY}
-      api_base: ${API_BASE}
 
 general_settings:
   master_key: ${LITELLM_MASTER_KEY}
