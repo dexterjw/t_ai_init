@@ -3,9 +3,9 @@ model_list:
   - model_name: gpt-5-from-config
     litellm_params:
       model: gpt-5
-      api_key: ${API_KEY}
       custom_llm_provider: openai
       litellm_credential_name: telus-fuel-ix
+      # api_key: ${API_KEY}
 
 litellm_settings:
   set_verbose: true
