@@ -4,11 +4,13 @@ model_list:
     litellm_params:
       model: gpt-5
       api_key: ${API_KEY}
-
-general_settings:
-  master_key: ${LITELLM_MASTER_KEY}
-  ssl_verify: false
+      custom_llm_provider: openai
+      litellm_credential_name: telus-fuel-ix
 
 litellm_settings:
   set_verbose: true
   json_logs: true
+
+general_settings:
+  master_key: ${LITELLM_MASTER_KEY}
+  ssl_verify: false
