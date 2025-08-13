@@ -4,8 +4,9 @@ model_list:
     litellm_params:
       model: gpt-5
       custom_llm_provider: openai
-      litellm_credential_name: telus-fuel-ix
+      litellm_credential_name: telus-fuel-ix  # setup from the UI
       # api_key: ${API_KEY}
+      # TODO - fix the model configration to work without manual additional from UI. At the moment models are added from the UI, which is not ideal.
 
 litellm_settings:
   set_verbose: true
