@@ -1,0 +1,28 @@
+# LLM Provider configuration
+[llm.providers.openai]
+type = "openai"
+api_key = "{{ env.OPENAI_API_KEY }}"
+forward_token = true
+
+# Model configuration (at least one model required per provider)
+[llm.providers.openai.models.gpt-4]
+[llm.providers.openai.models.gpt-3-5-turbo]
+
+[llm.providers.anthropic]
+type = "anthropic"
+api_key = "{{ env.ANTHROPIC_API_KEY }}"
+
+[llm.providers.anthropic.models.claude-3-5-sonnet-20241022]
+
+# MCP Server configuration
+[mcp.servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+auth.token = "{{ env.GITHUB_TOKEN }}"
+
+[mcp.servers.filesystem]
+cmd = ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/Users/YOUR_USERNAME/Desktop"]
+
+[mcp.servers.python_server]
+cmd = ["python", "-m", "mcp_server"]
+env = { PYTHONPATH = "/opt/mcp" }
+cwd = "/workspace"

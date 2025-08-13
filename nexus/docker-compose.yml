@@ -1,0 +1,14 @@
+services:
+  nexus:
+    image: ghcr.io/grafbase/nexus:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nexus.toml:/etc/nexus.toml
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
